@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1e1e1e;
+    color: #beb5ac;
+    font-size: 18px;
+}
+a {
+    color: #bb9c5c;
+    text-decoration: none;
+}
+.container {
+    max-width: 900px;
+    margin: 20px auto 0;
+}
+.ch {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border: 1px solid #404040;
+}
