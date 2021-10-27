@@ -93,20 +93,83 @@
         // Тоже самое и с минимальными значениями
 
         // Деление на ноль в JavaScript ошибкой не является
-        console.log(3/0);
-        console.log(-3/0);
+        console.log('3/0:               ', 3/0);
+        console.log('-3/0:              ',-3/0);
         // Исключение: ноль, деленный на ноль, не имеет четко определенного значения
-        console.log(0/0);
+        console.log('0/0:               ',0/0);
         // Так же будет (not-a-number) с не нечисловыми операндами которые не могут быть преобразованы в числа
-        console.log(Infinity/Infinity);
+        console.log('Infinity/Infinity: ',Infinity/Infinity);
 
         // Свойства Number определяются в ES6
-        console.log(Number.parseInt('4'));
-        console.log(Number.parseFloat('5'));
-        console.log(Number.isNaN(0/0));
-        console.log(Number.isFinite(5));
-        console.log(Number.isInteger(5.1));
-        console.log(Number.isSafeInteger(5));
-        console.log(Number.MIN_SAFE_INTEGER);
-        console.log(Number.MAX_SAFE_INTEGER);
+        console.log('parselnt():                ', Number.parseInt('4'));
+        console.log('parseFloat():              ', Number.parseFloat('5'));
+        console.log('Является ли значение NaN:  ', Number.isNaN(0/0));                  // Возвращает true, если аргументом является NaN или аргумент имеет нечисловое значение
+        console.log('Является ли конечным числ: ', Number.isFinite(5));                 // возвращает true, если аргумент представляет собой число, отличающееся от NaN, Infinity или -Infinity
+        console.log('Целое число:               ', Number.isInteger(5.1));
+        console.log('целым числом -(2**53) < х < 2**53: ', Number.isSafeInteger(5));
+        console.log('Минимум:                   ', Number.MIN_SAFE_INTEGER);
+        console.log('Максимум:                  ', Number.MAX_SAFE_INTEGER);
+        console.log('Наименьшая разница:        ', Number.EPSILON);
         
+        // Странности 0
+        let zero11 = 0;             // Положительный 0
+        let zero12 = -0;            // Отрицательный 0 
+        console.log('0 === -0:              ', zero11 === zero12);         // => true
+        console.log('Infinity == -Infinity: ', 1/zero11 === 1/zero12)      // => false
+
+    //3.2.4. Двоичное представление чисел с плавающей точкой и ошибки округления
+        // Чисел с плавающей точкой конечное количество (точнее 18 437 736 874 454 810 627 чисел)
+        // Числа JavaScript обладают достаточной точностью и могут обеспечить очень
+            //близкую аппроксимацию к 0.1
+        // Пример
+        let x = .3 - .2;
+        let y = .2 - .1;
+        console.log('x === y:   ',x === y);
+        console.log('x === .1:  ',x === .1);
+        console.log('y === .1:  ',y === .1);
+        console.log('x:         ',x);
+        console.log('y:         ',y);
+    
+    //3.2.5. Целые числа произвольной точности с использованием BigInt
+        // Новейшее средство ES2020 числовой тип BigInt
+        // По умолчанию они десятичные
+            // но можно применять префиксы
+            // 0b, Оo и Оx для двоичных, восьмеричных и шестнадцатеричных
+        console.log('10-чное: ',2021n);
+        console.log('2-чное:  ',0b11111100101n);
+        console.log('8-чное:  ',0o3745n);
+        console.log('16-чное: ',0x7E5n);
+
+        // Преобразование в BigInt
+        let q = BigInt(Number.MAX_SAFE_INTEGER);
+        console.log(q);
+        let stri = '1' + '0'.repeat(100);
+        console.log(BigInt(stri));                  // => один гугол
+        
+        // Арифметические действия
+        console.log("6n + 2n:           ", 6n + 2n);
+        console.log("6n - 2n:           ", 6n - 2n);
+        console.log("6n * 2n:           ", 6n * 2n);
+        console.log("6n / 2n:           ", 6n / 2n);
+        console.log("6n % 2n:           ", 6n % 2n);
+        console.log("6n ** 2n:          ", 6n ** 2n);
+        console.log("(2n ** 5n) - 1n:   ", (2n ** 5n) - 1n);
+
+        // Нельзя совмещать разные типы операндов т.е. делать как показано ниже
+        //console.log(6n / 2);      // => mix BigInt ошибка
+        //console.log(6 / 2n);      // тоже самое
+
+        // Сравнение обыченого числа с BigInt
+        console.log("2 == 2n:           ",2 == 2n);         // => true
+        console.log("2 === 2n:          ",2 === 2n);        // => false так как проверка по типам
+
+    // 3.2.6. Дата и время
+        // Время отсчитывается с 1 января 1970 года
+        let timestamp = Date.now();
+        let now  = new Date();
+        let ms = now.getTime();
+        let iso = now.toISOString();
+        console.log('Текущее время числом: ', timestamp);
+        console.log('Текущее время объект: ', now);
+        console.log('Преобразованное время в миллисекунды: ', ms);
+        console.log('В Строку стандарт формата: ', iso);
