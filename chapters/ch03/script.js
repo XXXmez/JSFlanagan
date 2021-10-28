@@ -175,4 +175,90 @@
         console.log('В Строку стандарт формата: ', iso);
 // 3.3. Текст
     // JavaScript использует кодировку UTF-16 набора символов Unicode
+    // Строка это по сути проидексованный массив
+
+    // 3.3.1. Строковые литералы
+        // Запись строки
+        let strPrim1 = 'Запись строки пример 1',
+            strPrim2 = "Запись строки пример 2",
+            strPrim3 = `Запись строки пример 3`;
+        
+        // \n - символ новой строки
+        console.log('Привет\nдруг');
     
+    // 3.3.2. Управляющие последовательности в строковых литералах
+        console.log('Пр\'ивет');            // Симво апострофа
+        console.log('\xA9');                // так можно ставить иникоды символы
+
+    // 3.3.3. Работа со строками
+        // конкатенация строк
+        let strPrim4 = 'Привет ' + 'друг';
+        let strPrim5 = strPrim4 + ', как твои дела?';
+        console.log(strPrim5);
+
+        // строки можно сравнить, но равны они будут если они в точности одинаковые
+        console.log("'привет' == 'привет': ", 'привет' == 'привет');      // true
+        console.log("'привет' == 'привет': ", 'привет' == 'Привет');      // false - так как сравниваются юникоды у п и П они разные
+        console.log("'привет' > 'привет':  ", 'привет' > 'привет');      // false
+        console.log("'привет' > 'привет':  ", 'привет' > 'Привет');      // true - так как у п уникод больше чем у П
+
+        // Длина строки
+        console.log('Привет: ', 'Привет'.length);
+
+        // API - для работы со строками
+        let strH = 'Привет, мир!';
+
+        // Получение элементов из строки
+        console.log(strH.substring(1,4));
+        console.log(strH.slice(1,4));
+        console.log(strH.slice(-3));
+        console.log(strH.split(', '));
+
+        // Поиск в строке
+        console.log(strH.indexOf('и'));
+        console.log(strH.indexOf('и', 3));
+        console.log(strH.indexOf('zz'));
+        console.log(strH.lastIndexOf('р'));
+
+        // булевый поиск ES6
+        console.log(strH.startsWith('мир'));
+        console.log(strH.endsWith('!'));
+        console.log(strH.includes('ет'));
+
+        // Создание модиф версий строкий
+        console.log(strH.replace('ет', 'ат'));
+        console.log(strH.toLowerCase());
+        console.log(strH.toUpperCase());
+        console.log(strH.normalize());
+        console.log(strH.normalize('NFD'));         // 'NFC' 'NFKC' 'NFKD'
+
+        // Инспектирование симвовлов строки
+        console.log(strH.charAt(1));
+        console.log(strH.charAt(strH.length-1));
+        console.log(strH.charCodeAt(0));
+        console.log(strH.codePointAt(0));
+
+        // Функции строк ES2017
+        console.log('строка'.padStart(10));
+        console.log('строка'.padEnd(10));
+        console.log('строка'.padStart(10, '*'));
+        console.log('строка'.padEnd(10, '*'));
+
+        // Функция усечения прбелов .trim() ES5 -> ES2019
+        console.log(' тест '.trim());
+        console.log(' тест '.trimStart());
+        console.log(' тест '.trimEnd());
+        console.log(' тест '.trimRight());
+
+        // смешнанные методы строк
+        console.log(strH.concat('Yes'));
+        console.log(strH.repeat(3));
+
+        // строки в JavaScript неизменяемы
+        // методы возвращают новые строки они не модифицируют строку
+
+    // 3.3.4. Шаблонные литералы
+        
+        
+
+
