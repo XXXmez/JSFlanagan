@@ -19,12 +19,26 @@ body {
 .main > div {
     margin-bottom: 20px;
 }
-.headerTitle, .foreword {
+.headerTitle, .foreword, .content {
     padding: 10px 30px;
 }
 .headerTitleText {
     font-size: 25px;
 }
+
+.contentText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nameContent {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.textContent {
+    font-size: 14px;
+}
+
 .forewordText {
     color: #a4d6f9;
 }
