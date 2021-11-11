@@ -573,7 +573,79 @@
         // var видно везде область видимости отличается от let
         
         // глобальная переменная var
-        globalThis.x33 = 4;
+        globalThis.x33 = 4;     // для создания глобальной переменной ссылаемся на globalThis
         console.log(x33);       // => 4
-
         
+        let x34 = 5;
+        //delete x34;
+        //delete x33;                   
+        //console.log(x33);            // => x33 is not defined    удалилось
+        //console.log(x34);            // => 5                     не удалилось так как не являются свойствами глобальног объекта
+        //console.log(globalThis);     // глобальная область
+
+    // 3.10.3. Деструктурирующее присваивание
+        // Пример
+            let [x310, y310, z310] = [7, 9, 18];
+            console.log(x310);      // => 7
+            console.log(y310);      // => 9
+            console.log(z310);      // => 18
+        
+        // Пример в работе с функциями умножаем каждое число в массиве на два
+            function duble (x, y) {
+                return [x*2, y*2];
+            };
+            let [cD, vD] = duble(7,8);
+            console.log(cD);        // => 14
+            console.log(vD);        // => 16
+
+        // Функция число в квадрат и в куб
+            const destrSum = document.querySelector('.destr-sum'),
+                destrBut = document.querySelector('.destructuring-but'),
+                destrTotal = document.querySelector('.destrTotal');
+            
+            destrBut.addEventListener('click', () => {
+                if (destrSum.value.length >= 1 && Boolean(+destrSum.value)) {
+                    let [squ, cub] = markup(+destrSum.value);
+                    destrTotal.innerHTML = `Квадрат = ${squ}, куб = ${cub}`;
+                } else {
+                    destrTotal.innerHTML = `Вы ввели число с ошибкой`;
+                }
+            })
+
+            function markup (x) {
+                return [x**2, x**3]
+            }
+        
+        // Деструктуризация и for
+            let obJ = {
+                x:1,
+                y:2,
+                z:3,
+                f:4
+            };
+            for (const [name, value] of Object.entries(obJ)) {
+                console.log(name, value);
+            }
+
+        // Добавить остаток в одно значение
+            let [xyz, ...zyx] = [1,2,3,4,5,6,7,8];
+            console.log(xyz);       // => 1
+            console.log(zyx);       // => [2, 3, 4, 5, 6, 7, 8]
+
+        // Деструктурирующее присваивание можно применять с вложенными массивами но левая часть должна быть похожа
+            let [xc, [xv,xz], xb] = [1, [5,6], 3];
+            console.log(xc);
+            console.log(xv);
+            console.log(xz);
+            console.log(xb);
+
+        let [...arrStr] = 'Привет друг';
+        console.log(arrStr);        // => ['П', 'р', 'и', 'в', 'е', 'т', ' ', 'д', 'р', 'у', 'г']
+
+        // Деструктурирующее присваивание c объектом
+            let transparent = {r: 0.0, g: 0.0, b: 0.0, a: 1.0 };
+            let {r,g,b,a} = transparent;
+            console.log(r);
+            console.log(a);
+        
+// Конец 3 главы

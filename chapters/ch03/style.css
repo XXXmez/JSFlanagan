@@ -28,3 +28,27 @@ body {
 .forewordText {
     color: #a4d6f9;
 }
+
+.destructuring-body {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.destructuring-body > div {
+    margin: 5px 0;
+}
+.destructuring-but {
+    border: 1px solid wheat;
+    padding: 5px;
+    cursor: grab;
+}
+.destructuring-total {
+    display: flex;
+    justify-content: space-evenly;
+}
+.destructuring-total > div {
+    border: 1px solid wheat;
+    padding: 5px;
+}
