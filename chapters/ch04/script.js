@@ -78,15 +78,16 @@ function addContent (name, text) {
     // выражение . идентификатор
     // выражение [ выражение ]
 
-    let object4 = {x:1, y: {z:2, c: 3}};
+    let object4 = {x:1, y: {z:2, c: 3}, 'xy xy': 'пробел'};
     let array6 = [object4 , 1,[2,3]];
 
     console.log(object4.x);
     console.log(object4.y.z);
     console.log(object4['x']);
+    console.log(object4['xy xy']);
     
     console.log(array6[1]);
     console.log(array6[2]['1']);
     console.log(array6[0].y);
 
-    // 90
+    addContent('Выражения доступа к свойствам', 'array6[2][\'1\'];');
