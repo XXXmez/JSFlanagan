@@ -278,8 +278,6 @@ function addContent (name, text) {
     // 4.8.3. Побитовые операции
         // Побитовые операции выполняют низкоуровневые манипуляции битами в двоичном представлении чисел
         // Такие операции обычно не применяются в программировании на JavaScript
-    
-<<<<<<< HEAD
 
 // 4.9. Выражения отношений
     // 4.9.1. Операции равенства и неравенства
@@ -300,7 +298,7 @@ function addContent (name, text) {
             // Если оба значения являются n u l l или u n d e fin ed , тогда они равны
                 console.log('null === null:             ', null === null);                  // => true
                 console.log('undefined === undefined:   ', undefined === undefined);        // => true
-            // Если оба значения представляют собой булевское значение t r u e или f a l s e , тогда они равны.
+            // Если оба значения представляют собой булевское значение true или false , тогда они равны.
                 console.log('true === true:             ', true === true);                  // => true
                 console.log('false === false:           ', false === false);                // => true
             // NaN никогда не равно никакому другому значению включая себя самого 
@@ -370,17 +368,17 @@ function addContent (name, text) {
             console.log(9 >= 9);
         
         // сравнение и преобразование
-            // двух операндов оказывается объектом, то он преобразуется в элементарное значение, t o S t r in g () v a lu eO f ()
+            // двух операндов оказывается объектом, то он преобразуется в элементарное значение, toString() valueOf()
 
             // Если после требуемых преобразований, становятся строками 
             // тогда две строки сравниваются в алфавитном порядке
 
             // либо сравниваются числами
 
-            // Более нежедный алгоритм сравнения строк S t r in g . localeCompare ()
+            // Более нежедный алгоритм сравнения строк String.localeCompare()
             // Для сравнения, нечувствительного к регистру, вы можете преобразовывать все символы в строках к
-            // нижнему или верхнему регистру с применением метода S tr in g . toLowerCase ()
-            // или S tr in g . toUpperCase () или более универсальный I n t i .C o l l a to r
+            // нижнему или верхнему регистру с применением метода String.toLowerCase()
+            // или String.toUpperCase() или более универсальный Inti.Collator
 
 
     // 4.9.3. Операция in
@@ -405,16 +403,13 @@ function addContent (name, text) {
             let ddq = new Date;                                                     // Создание нового объекта с помощью конструктора Dated
             console.log("ddq instanceof Date:       ", ddq instanceof Date);            // => true объект ddq был создан с помощью Dated
             console.log("ddq instanceof Object:     ", ddq instanceof Object);          // => true все объекты являются экземплярами Object
-            console.log("ddq instanceof Number:     ", ddq instanceof Number);          // => false: d - не объект Number
+            console.log("ddq instanceof Number:     ", ddq instanceof Number);          // => false d - не объект Number
 
             let aaq = [1, 2, 3];                                                    // => Создание нового массива
             console.log("aaq instanceof Array:      ", aaq instanceof Array);         // => true объект а - массив
             console.log("aaq instanceof Object:     ", aaq instanceof Object);        // => true все массивы являются объектами
-            console.log("aaq instanceof RegExp:     ", aaq instanceof RegExp);        // => false: массивы - не регулярные выражения
+            console.log("aaq instanceof RegExp:     ", aaq instanceof RegExp);        // => false массивы - не регулярные выражения
         
         // ВНИМАНИЕ, все объекты являются экземплярами Object.
 
-// 
-=======
-    // 
->>>>>>> b9af5d32981cc82500ab3709f4f09d51d9be901d
+//
