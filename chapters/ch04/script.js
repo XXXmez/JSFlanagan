@@ -10,6 +10,27 @@ function addContent (name, text) {
         </div>
     `
 }
+class AddItemContent {
+    constructor(title, text, ...rest) {
+        this.title = title;
+        this.text = text;
+        this.outer = rest;
+    }
+    
+    render() {
+        main.innerHTML += `
+            <div class="content">
+                <div class="contentText">
+                    <span class="nameContent">${this.title}</span>
+                    <span class="textContent">${this.text}</span>
+                </div>
+            </div>
+        `
+        console.log(this.title, this.text, this.outer);
+    }
+}
+
+//new AddItemContent('Первый', 'второй', 'третий', 'четвертый', 'пятый').render();
 
 // 4.1. Первичные выражения
     // Первичными выражениями в JavaScript являются константы или литеральные значения, 
@@ -516,3 +537,21 @@ function addContent (name, text) {
 
         // В большинстве случаев выражение
         
+
+// 4.12. Вычисление выражений
+    // Как и многие интерпретируемые языки JavaScript обладает возможностью
+    // интерпретации строк с исходным кодом JavaScript, вычисляя их с целью выработки значения
+    // JavaScript делает это с помощью глобальной функции e v a l ():
+        console.log(eval('7-3'));
+
+    // Если вы используете eval(), тогда хорошо подумайте точно ли он нужен так как это бреш в безопасности
+
+    // 4.12.1. eval()
+        // 
+    // 4.12.2. eval() в глобальном контексте
+        //
+    // 4.12.3. eval() в строгом режиме
+        //
+
+
+//
