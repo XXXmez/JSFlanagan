@@ -138,3 +138,54 @@ class AddItemContent {
                     console.log(0);
                     break;
             }
+
+
+    // 5.4. Циклы
+        // имеется пять операторов цикла: while, do/while,
+        // for, for/of (и его разновидность for/await) и for/in.
+
+        // 5.4.1. while
+            // while представляет базовый цикл JavaScript
+                //w h ile (выражение)
+                    //оператор
+
+            let count1 = 0;
+            while (count1 < 5) {
+                console.log(count1);
+                count1++;
+            }
+
+        // 5.4.2. do/while
+            // похож на while выражение цикла проверяется в конце цикла, а не в начале
+                let count2 = 0;
+                do {
+                    console.log(count2);
+                } while (count2++ < 5)
+
+        // 5.4.3. for 
+            // for (инициализация; проверка; инкрементирование)
+            // оператор
+
+            // эквивалентный for цикл while 
+                // инициализация;
+                // while(проверка) {
+                //  оператор
+                //  инкрементирование;
+                // }
+
+            for(let count = 0; count < 5; count++) {        // аналог цикла while со 152 строки
+                console.log(count);
+            }
+
+            let i, j, sum = 0;
+            for (i = 0, j = 10 ; i < 10 ; i++, j-- ) {
+                sum += i * j;
+            }
+
+            // for используется для обхода структуры данных типа связного списка и возвращения последнего объекта в списке
+            function tail(о) { // Возвращает хвост связного списка о
+                for(; о.next; о = о.next) /* пустое тело */ ; // Обход, пока свойство
+                // о.next истинное
+                return о;
+            }
+            console.log(tail(5));
