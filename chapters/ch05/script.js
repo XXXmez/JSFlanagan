@@ -525,3 +525,82 @@ class AddItemContent {
     
     
     // 5.7. Объявления
+        // пропуск - практика
+            {
+                let typeNumber = 1;
+                let typeString = '1';
+                let typeObject = {1:1, 2:2};
+                let typeArray = [1,2];
+                let typeTrue = true;
+                let typeNaN = NaN;
+                let typeUndefined = undefined;
+                let typeNull = null;
+                let typeFunction = function () {
+                    let x = 1+1;
+                };
+                let typeInfinity = Infinity;
+                let typeBigInt = BigInt(1997);
+                console.log("Тип число:     ", typeof typeNumber);
+                console.log("Тип NaN:       ", typeof typeNaN);
+                console.log("Тип infinity:  ", typeof typeInfinity);
+                console.log("Тип строка:    ", typeof typeString);
+                console.log("Тип объект:    ", typeof typeObject);
+                console.log("Тип массив:    ", typeof typeArray);
+                console.log("Тип Null:      ", typeof typeNull);
+                console.log("Тип true:      ", typeof typeTrue);
+                console.log("Тип undefined: ", typeof typeUndefined);
+                console.log("Тип функция:   ", typeof typeFunction);
+                console.log("Тип BigInt:    ", typeof typeBigInt);
+
+                const arr = [];
+                const arr1 = [];
+                const obj = [];
+                const obj1 = [];
+
+                console.log("массив ==  : ", arr == arr1);
+                console.log("массив === : ", arr == arr1);
+                console.log("объект ==  : ", obj == obj1);
+                console.log("объект === : ", obj == obj1);
+            }
+        // конец
+    
+    // 5.7. Объявления
+        // Это определние новых значений и назначения им имен
+        // const, let, var, function, class, import и export
+        
+        // 5.7.1. const, let и var
+            // const объявляет константы
+            // let — переменные
+            // var — переменные старого типа
+
+            const quPI = 2 * Math.PI;
+            let radius = 3;
+            var cf = quPI * radius;
+
+        // 5.7.2. function
+            // function применяется для определения функций
+            function areap(radius) {
+                return Math.PI * radius;
+            }
+            // Объявление функции создает объект функции и присваивает его указанному имени — areap в приведенном примере
+
+            // Существуют функции генераторы, объявляются как function*, так же есть асинхронные функции пишутся async function
+
+        // 5.7.3. class
+            // class добавили в ES6
+            // пример
+                class Circle {
+                    constructor (radius) { this.r = radius;}
+                    area () {return Math.PI * this.r}
+                }
+            
+            // классы не поднимаются по этому класс нельзя испольозвать в коде до его объявления
+
+        // 5.7.4. import и export
+            // применяются для того что бы значения из одного модуля JS использовать в другом модуле JS
+            // Модуль это файл (script.js) имеет своё пространство имен
+            
+            // import применяются для импортирования и назначения им имен из другого модуля в текущий 
+                // import Circle from './geometry/circle.js';
+
+                //156
