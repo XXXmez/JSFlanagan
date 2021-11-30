@@ -602,5 +602,11 @@ class AddItemContent {
             
             // import применяются для импортирования и назначения им имен из другого модуля в текущий 
                 // import Circle from './geometry/circle.js';
+                // import { PI, TAU } from "./geometry/constants. js";
+                // import { magnitude as hypotenuse } from "./vectors/utils. js";
 
-                //156
+            // Значения в модуле являются закрытыми и не могу сами импортироваться если они не экспортированны
+            // export указывает какие значения будут экспортированны
+                // const PI74 = Math.PI;
+                // const TAU74 = 2 * PI;
+                // export { PI74, TAU74 };
