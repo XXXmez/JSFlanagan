@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1e1e1e;
+    color: #beb5ac;
+    font-size: 18px;
+}
+.main {
+    max-width: 950px;
+    margin: 20px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main > div {
+    margin-bottom: 20px;
+}
+.headerTitle, .foreword, .content {
+    padding: 10px 30px;
+}
+.headerTitleText {
+    font-size: 25px;
+}
+
+.contentText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nameContent {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.textContent {
+    font-size: 14px;
+}
+
+.forewordText {
+    color: #a4d6f9;
+}
