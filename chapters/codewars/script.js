@@ -67,3 +67,34 @@ function nbYear(p0, percent, aug, p) {
 }
 
 console.log(nbYear(1500, 5, 100, 5000));
+
+
+// возвращает массив только чисел
+function filter_list(l) {
+    let newArr = [];
+    for (let i = 0; i < l.length; i++) {
+        if (typeof l[i] == 'number') {
+            newArr.push(l[i])
+        }
+    }
+    return newArr
+}
+
+console.log(filter_list([1,2,'aasf','1','123',123]));
+
+
+// максимальное число - в разработке =)
+var maxSequence = function(arr){
+    let sum = 0,
+    negative = arr.every(i => i < 0);   // проверяет не состоит ли весь массив из отрицательных чисел
+
+    if (0 == arr.length) {
+        return 0;
+    } else if (negative) {
+        return 0;
+    } else {
+        
+    }
+}
+
+console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
