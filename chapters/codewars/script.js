@@ -98,3 +98,49 @@ var maxSequence = function(arr){
 }
 
 console.log(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+
+// Каждая первая буква слова в верхнем регистре
+function upper(str) {
+    let str = [];
+  
+    this.split(' ').forEach((s) => {
+        str.push(s[0].toUpperCase() + s.substring(1))
+    })
+    return str.join(' ')
+}
+
+
+
+// возвращает максимальное и минимальное число из массива
+function highAndLow(numbers){
+    let arrNum = numbers.split(' ')
+    let min = Math.min(...arrNum);
+    let max = Math.max(...arrNum);
+    let str = `${max} ${min}`
+    return str
+}
+
+console.log(highAndLow("1 2 3 4 5"));
+
+
+// Разделяет число по частям
+function expandedForm(num) {
+    let str = String(num).split('');
+    let l = String(num).length;
+    let newA = [];
+
+    for (let i = 0; i < l; i++){
+        if (str[i] != 0) {
+            for (let j = l - i; j > 1; j--) {
+                str[i]+=0;
+            }
+        }
+    }
+    newA = str.filter(n => {
+        return n != 0;
+    })
+    return newA.join(' + ')
+}
+
+console.log(expandedForm(70304));
