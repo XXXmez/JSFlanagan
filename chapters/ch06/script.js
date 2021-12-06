@@ -107,3 +107,36 @@ addContent('Условные операторы', 'if и switch');
         // свойства prototype функции конструктора
 
         // объект, созданный посредством new Object(), наследует Object.prototype, как и объект, созданный с помощью {}
+
+        let ob1 = {};
+        let ob2 = new Object();
+        let ob3 = Object.create(null)
+
+        console.log("ob1 : ", ob1);
+        console.log("ob2 : ", ob2);
+        console.log("ob3 : ", ob3);
+
+        // цепочкой прототипов это 
+        // Date.prototype наследует свойства от Object.prototype, 
+        // поэтому объект Date, созданный посредством new Date (), наследует свойства от Date.prototype и Object.prototype
+
+    // 6.2.4. Object.create()
+        // Object.create() создает новый объект, используя в качестве его прототипа первый аргумент
+
+        let ob4 = Object.create({x: 1, y: 2});
+        console.log("ob4 : ", ob4);
+        console.log(ob4.x + ob4.y);
+
+        // можете передать null, чтобы создать новый объект, не имеющий прототипа,
+        // но в таком случае вновь созданный объект ничего не унаследует
+        ob3.x = 4;
+        ob3.y = 5;
+        console.log("ob3 : ", ob3);   // методов нет
+
+        // а если нужен обычный объект нужно передать
+        let ob5 = Object.create(Object.prototype);
+        console.log("ob5 : ", ob5);
+
+
+// 6.3. Запрашивание и установка свойств
+    //
